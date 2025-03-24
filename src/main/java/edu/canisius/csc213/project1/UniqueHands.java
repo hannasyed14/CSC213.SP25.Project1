@@ -5,7 +5,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public class UniqueHands {
-    private static final int NUM_THREADS = Runtime.getRuntime().availableProcessors(); // Use all CPU cores
+    private static final int NUM_THREADS = Runtime.getRuntime().availableProcessors(); 
 
     public static void main(String[] args) {
         int[] deckSizes = {24, 28}; // Deck sizes to test
@@ -40,7 +40,7 @@ public class UniqueHands {
                 }
             }
 
-            executor.shutdown(); // Shut down threads after execution
+            executor.shutdown(); 
             System.out.println("Results written to " + fileName);
 
         } catch (IOException e) {
@@ -74,7 +74,7 @@ public class UniqueHands {
 
         int attempts = 0;
         Random random = new Random();
-        final int progressInterval = 100000; // Report progress every 100,000 attempts
+        final int progressInterval = 100000; // progress is executed every 100000 attempts
 
         while (seenHashes.size() < totalUniqueHands) {
             int handHash = generateHandHash(deckSize, handSize, random);
@@ -122,9 +122,9 @@ public class UniqueHands {
             hand[index++] = card;
         }
 
-        Arrays.sort(hand); // Sorting ensures consistency in hash generation
+        Arrays.sort(hand); 
 
-        return Arrays.hashCode(hand); // Generate a unique integer hash
+        return Arrays.hashCode(hand); // Get a unique integer hash
     }
 
     /**
