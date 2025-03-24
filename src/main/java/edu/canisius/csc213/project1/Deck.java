@@ -24,7 +24,7 @@ public class Deck {
         }
 
         cards = new ArrayList<>();
-        int numRanks = size / 4; // Determines how many top ranks to include
+        int numRanks = size / 4; // how many top ranks to include
 
         // Get all ranks in order (Ace, Two, ..., King)
         Card.Rank[] ranks = Card.Rank.values();
@@ -32,7 +32,7 @@ public class Deck {
         // Add only the highest `numRanks` ranks
         for (int i = 0; i < numRanks; i++) {
             for (Card.Suit suit : Card.Suit.values()) {
-                cards.add(new Card(suit, ranks[ranks.length - numRanks + i])); // Start from highest rank
+                cards.add(new Card(suit, ranks[ranks.length - numRanks + i])); // Start at highest
             }
         }
     }
